@@ -37,7 +37,7 @@ Turn switch "SAFE SHUTDOWN" on PCB to ON.
 3. Press F4 enter terminal.
 4. In the terminal, type the one-line command below (case sensitive):
 
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/install.sh" | sudo bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/install.sh" | sudo bash`**
 
 --------------------
 
@@ -49,10 +49,10 @@ Turn switch "SAFE SHUTDOWN" on PCB to ON.
 5. In the terminal, type the one-line command below (case sensitive):
 
 For Recalbox:\
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/install_recalbox.sh" | bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/install_recalbox.sh" | bash`**
 
 For Batocera:\
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/install_batocera.sh" | bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/install_batocera.sh" | bash`**
 
 You can edit the python script and add some parameters to the script calls:
 ```
@@ -85,7 +85,7 @@ All metadata is always saved
 3. Press F4 enter terminal.
 4. In the terminal, type the one-line command below (case sensitive):
 
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/install_gpi.sh" | sudo bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/install_gpi.sh" | sudo bash`**
 
 --------------------
 
@@ -95,16 +95,16 @@ All metadata is always saved
 3. User: root Password: linux
 4. In the terminal, type the one-line command below (case sensitive):
 
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/install_gpi_batocera.sh" | bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/install_gpi_batocera.sh" | bash`**
 
 ## Section 3. Uninstallers
 
 #### Example for RetroPie
 Type in the terminal, type the one-line command below (case sensitive):
 
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/uninstall_all.sh" | sudo bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/uninstall_all.sh" | sudo bash`**
 
 #### Example for RecalBox and BATOCERA
 Type in the terminal, type the one-line command below (case sensitive):
 
-**`wget -O - "https://raw.githubusercontent.com/crcerror/retroflag-picase/master/uninstall_all.sh" | bash`**
+**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/uninstall_all.sh" | bash`**
