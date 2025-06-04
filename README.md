@@ -40,7 +40,12 @@ Turn switch "SAFE SHUTDOWN" on PCB to ON.
 3. Press F4 enter terminal.
 4. In the terminal, type the one-line command below (case sensitive):
 
-**`wget -O - "https://raw.githubusercontent.com/asheimo/retroflag-picase/master/install.sh" | sudo bash`**
+```
+git clone https://github.com/asheimo/retroflag-picase.git
+cd retroflag-picase
+chmod +x install.sh
+sudo ./install.sh
+```
 
 --------------------
 
