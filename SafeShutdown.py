@@ -38,17 +38,34 @@ def when_pressed():
 def when_released():
  led.on()
 
+import time
+import threading
+
+def stop_blink_after(seconds, led_obj):
+    time.sleep(seconds)
+    led_obj.off()
+    led_obj.on()
+
 def reboot():
- led.blink(on_time=0.2, off_time=0.2, n=10)
- output = int(subprocess.check_output(['/opt/RetroFlag/multi_switch.sh', '--es-pid']))
- output_rc = int(subprocess.check_output(['/opt/RetroFlag/multi_switch.sh', '--rc-pid']))
- if output_rc:
-     os.system("/opt/RetroFlag/multi_switch.sh --closeemu")
- elif output:
-     os.system("/opt/RetroFlag/multi_switch.sh --es-restart")
- else:
-     os.system("sudo reboot")
- led.on()
+    blink_time = 0.4  # 0.2s on + 0.2s off
+    blink_count = 10
+    total_blink_duration = blink_time * blink_count
+
+    led.blink(on_time=0.2, off_time=0.2)  # Non-blocking infinite blink
+
+    # Stop the blinking after total duration in a background thread
+    threading.Thread(target=stop_blink_after, args=(total_blink_duration, led), daemon=True).start()
+
+    output = int(subprocess.check_output(['/opt/RetroFlag/multi_switch.sh', '--es-pid']))
+    output_rc = int(subprocess.check_output(['/opt/RetroFlag/multi_switch.sh', '--rc-pid']))
+
+    if output_rc:
+        os.system("/opt/RetroFlag/multi_switch.sh --closeemu")
+    elif output:
+        os.system("/opt/RetroFlag/multi_switch.sh --es-restart")
+    else:
+        os.system("sudo reboot")
+
 
 btn = Button(powerPin, hold_time=hold)
 rebootBtn = Button(resetPin)
