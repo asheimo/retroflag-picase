@@ -98,17 +98,19 @@ else
 fi
 
 # Step 8: Prompt to reboot
-echo
-echo "RetroFlag Pi Case installation is complete."
-
-read -rp "Would you like to reboot now? (y/n): " answer
-case "${answer,,}" in
-    y|yes)
-        echo "Rebooting system..."
-        sleep 2
-        reboot
-        ;;
-    *)
-        echo "Installation complete. Please reboot manually later."
-        ;;
-esac
+        read -rp "Would you like to reboot now? [y/n]: " choice
+        case "$choice" in
+            y|Y|yes|YES)
+                echo "Rebooting system..."
+                sleep 2
+                reboot
+                break
+                ;;
+            n|N|no|NO)
+                echo "Reboot skipped. Please reboot manually to apply all changes."
+                break
+                ;;
+            *)
+                echo "Invalid choice. Please enter y or n."
+                ;;
+        esac
