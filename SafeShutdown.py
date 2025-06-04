@@ -1,8 +1,12 @@
 #!/usr/bin/env python3
 from gpiozero import Button, LED
+from gpiozero.pins.pigpio import PiGPIOFactory
 import os 
 from signal import pause
 import subprocess
+
+# Use pigpio factory
+factory = PiGPIOFactory()
 
 powerPin = 3 
 resetPin = 2 
