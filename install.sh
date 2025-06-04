@@ -35,27 +35,22 @@ fi
 echo "Installing python3-gpiozero..."
 apt-get install -y python3-gpiozero
 
-# Step 5: Download Python scripts
+# Step 5: Install Python scripts from local repo
 INSTALL_DIR="/opt/RetroFlag"
-SCRIPT_URL_BASE="https://raw.githubusercontent.com/asheimo/retroflag-picase/master"
+REPO_DIR="$(pwd)"
+
+echo "Installing SafeShutdown.py and multi_switch.sh from local clone..."
 mkdir -p "$INSTALL_DIR"
-cd "$INSTALL_DIR"
 
-echo "Downloading SafeShutdown.py..."
-wget -N --show-progress "$SCRIPT_URL_BASE/SafeShutdown.py"
-if [[ $? -ne 0 ]]; then
-    echo "Failed to download SafeShutdown.py. Exiting."
-    exit 1
-fi
+for script in SafeShutdown.py multi_switch.sh; do
+    if [[ ! -f "$REPO_DIR/$script" ]]; then
+        echo "Error: $script not found in $REPO_DIR"
+        exit 1
+    fi
+    cp "$REPO_DIR/$script" "$INSTALL_DIR/"
+done
 
-echo "Downloading multi_switch.sh..."
-wget -N --show-progress "$SCRIPT_URL_BASE/multi_switch.sh"
-if [[ $? -ne 0 ]]; then
-    echo "Failed to download multi_switch.sh. Exiting."
-    exit 1
-fi
-
-chmod +x multi_switch.sh
+chmod +x "$INSTALL_DIR/multi_switch.sh"
 
 # Step 6: Create and enable systemd service
 SERVICE_FILE="/etc/systemd/system/retroflag-safe-shutdown.service"
@@ -98,21 +93,17 @@ else
 fi
 
 # Step 8: Prompt to reboot
-while true; do
-    read -rp "Would you like to reboot now? [y/n]: " choice
-    case "$choice" in
-        y|Y|yes|YES)
-            echo "Rebooting system..."
-            sleep 2
-            reboot
-            break
-            ;;
-        n|N|no|NO)
-            echo "Reboot skipped. Please reboot manually to apply all changes."
-            break
-            ;;
-        *)
-            echo "Invalid choice. Please enter y or n."
-            ;;
-    esac
-done
+read -rp "Would you like to reboot now? [y/n]: " choice
+case "$choice" in
+    y|Y|yes|YES)
+        echo "Rebooting system..."
+        sleep 2
+        reboot
+        ;;
+    n|N|no|NO)
+        echo "Reboot skipped. Please reboot manually to apply all changes."
+        ;;
+    *)
+        echo "Invalid choice. Reboot skipped."
+        ;;
+esac
