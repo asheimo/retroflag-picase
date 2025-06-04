@@ -292,7 +292,7 @@ function help--NESPI+() {
     echo
     echo "For complete shutoff a systemd call must be added. Install service with:"
     echo "  1. cd /lib/systemd/system-shutdown"
-    echo "  2. sudo wget https://raw.githubusercontent.com/crcerror/ES-generic-shutdown/master/shutdown_fan"
+    echo "  2. sudo wget https://raw.githubusercontent.com/asheimo/ES-generic-shutdown/master/shutdown_fan"
     echo "  3. sudo chmod +x shutdown_fan"
     echo
     echo "Additional Info: https://retropie.org.uk/forum/topic/17639"

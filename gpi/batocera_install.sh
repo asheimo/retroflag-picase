@@ -1,5 +1,5 @@
 #!/bin/bash
-# Retroflag Advanced Shutdown Mod by crcerror
+# Retroflag Advanced Shutdown Mod by asheimo
 # This is exclusivly for BATOCERA
 # Intended to work for BATOCERA versions 5.24
 #

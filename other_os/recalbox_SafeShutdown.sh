@@ -3,7 +3,7 @@
 # Script for RecalBox to terminate every emulator instance
 # Control script to give feedback about state of EmulationStation and
 # active EMULATORS
-# by cyperghost aka crcerror // 18.03.2019
+# by cyperghost aka asheimo // 18.03.2019
 # Recalbox / Batocera versions // 04.06.2019
 # Added sigterm level, added second parameter to activate sigterm during smart_wait function
 

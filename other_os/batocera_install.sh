@@ -1,5 +1,5 @@
 #!/bin/bash
-# Retroflag Advanced Shutdown Mod by crcerror
+# Retroflag Advanced Shutdown Mod by asheimo
 # This is exclusivly for BATOCERA
 # Intended to work for BATOCERA versions 5.24
 #
@@ -8,7 +8,7 @@
 # Press Reset in running emulator will kick you back to ES
 
 version=$(awk '{ $0=$(NF-1)$NF; gsub(/[^0-9]/,""); print }' $HOME/data.version)
-git_url="https://raw.githubusercontent.com/crcerror/retroflag-picase/master/other_os/batocera_safeshutdown.py"
+git_url="https://raw.githubusercontent.com/asheimo/retroflag-picase/master/other_os/batocera_safeshutdown.py"
 file_dest="/usr/bin/rpi-retroflag-SafeShutdown"
 
 # Minimum version of BATOCERA is 5.24 because here batocera-es-swissknife is integrated
