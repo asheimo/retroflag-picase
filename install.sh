@@ -98,19 +98,21 @@ else
 fi
 
 # Step 8: Prompt to reboot
-        read -rp "Would you like to reboot now? [y/n]: " choice
-        case "$choice" in
-            y|Y|yes|YES)
-                echo "Rebooting system..."
-                sleep 2
-                reboot
-                break
-                ;;
-            n|N|no|NO)
-                echo "Reboot skipped. Please reboot manually to apply all changes."
-                break
-                ;;
-            *)
-                echo "Invalid choice. Please enter y or n."
-                ;;
-        esac
+while true; do
+    read -rp "Would you like to reboot now? [y/n]: " choice
+    case "$choice" in
+        y|Y|yes|YES)
+            echo "Rebooting system..."
+            sleep 2
+            reboot
+            break
+            ;;
+        n|N|no|NO)
+            echo "Reboot skipped. Please reboot manually to apply all changes."
+            break
+            ;;
+        *)
+            echo "Invalid choice. Please enter y or n."
+            ;;
+    esac
+done
