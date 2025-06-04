@@ -74,7 +74,8 @@ fi
 #-----------------------------------------------------------
 
 #Step 8) Reboot to apply changes----------------------------
-echo "RetroFlag Pi Case installation done. Will now reboot after 3 seconds."
-sleep 3
-sudo reboot
+echo "RetroFlag Pi Case installation done."
+#echo "RetroFlag Pi Case installation done. Will now reboot after 3 seconds."
+#sleep 3
+#sudo reboot
 #-----------------------------------------------------------
