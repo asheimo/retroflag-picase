@@ -1,4 +1,7 @@
 # retroflag-picase
+**Update 6/2025**\
+Script updated to use pigpio for compatibility with 64bit systems
+Added proper blinking for when reset is pressed for ES restart
 
 **Section 1**\
 Installers for NesPi+, MegaPi, SuperPi cases and (since 2020/08/22) **NESPI4**
