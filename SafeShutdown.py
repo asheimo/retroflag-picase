@@ -39,7 +39,7 @@ def when_released():
  led.on()
 
 def reboot():
- led.blink()
+ led.blink(on_time=0.2, off_time=0.2, n=5)
  output = int(subprocess.check_output(['/opt/RetroFlag/multi_switch.sh', '--es-pid']))
  output_rc = int(subprocess.check_output(['/opt/RetroFlag/multi_switch.sh', '--rc-pid']))
  if output_rc:
@@ -48,7 +48,6 @@ def reboot():
      os.system("/opt/RetroFlag/multi_switch.sh --es-restart")
  else:
      os.system("sudo reboot")
- led.on()
 
 btn = Button(powerPin, hold_time=hold)
 rebootBtn = Button(resetPin)
