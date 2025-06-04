@@ -1,4 +1,12 @@
 #!/usr/bin/env python3
+
+# Import Device and set pin factory first
+from gpiozero.pins.pigpio import PiGPIOFactory
+from gpiozero import Device
+
+# Force gpiozero to use pigpio globally
+Device.pin_factory = PiGPIOFactory()
+
 from gpiozero import Button, LED
 from gpiozero.pins.pigpio import PiGPIOFactory
 import os 
