@@ -1,6 +1,6 @@
 # retroflag-picase
 **Update 6/2025**\
-Script updated to use pigpio for compatibility with 64bit systems
+Script updated to use pigpio for compatibility with 64bit systems\
 Added proper blinking for when reset is pressed for ES restart
 
 **Section 1**\
